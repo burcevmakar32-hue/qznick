@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ACID ROCKET</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="user-info" onclick="openPage('profile')">
+                <img id="avatar" src="" alt="AV">
+                <div class="user-text">
+                    <span id="username">@loading</span>
+                    <span class="balance">⭐ <span id="balance-val">1000</span></span>
+                </div>
+            </div>
+        </header>
+
+        <main id="page-rocket" class="page active">
+            <div class="game-area">
+                <div id="rocket-container">
+                    <div id="rocket" class="rocket-emoji">🚀</div>
+                    <div id="multiplier">1.00x</div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="input-group">
+                    <button class="btn btn-acid" onclick="placeBet('stars')">СТАВКА ⭐ (10)</button>
+                    <button class="btn btn-pink" onclick="placeBet('gift')">СТАВКА 🎁</button>
+                </div>
+            </div>
+
+            <div class="live-bets">
+                <h3>LIVE СТАВКИ</h3>
+                <div class="bet-row"><span>@durov</span> <span class="win">+500 ⭐</span></div>
+                <div class="bet-row"><span>@notcoin</span> <span class="win">+2 NFT</span></div>
+            </div>
+        </main>
+
+        <main id="page-mines" class="page">
+            <h2 class="neon-title">ACID MINES</h2>
+            <div class="mines-grid" id="mines-grid"></div>
+            <button class="btn btn-acid full-width" onclick="startMines()">НОВАЯ ИГРА</button>
+        </main>
+
+        <main id="page-upgrade" class="page">
+            <h2 class="neon-title">UPGRADE NFT</h2>
+            <div class="wheel-container">
+                <div class="arrow">▼</div>
+                <div id="wheel" class="wheel"></div>
+            </div>
+            <p class="hint">Выбери подарок и крути!</p>
+            <button class="btn btn-cyan full-width" onclick="spinWheel()">КРУТИТЬ КОЛЕСО</button>
+        </main>
+
+        <main id="page-profile" class="page">
+            <div class="profile-card">
+                <img id="prof-avatar" src="" class="big-avatar">
+                <h2 id="prof-username">@user</h2>
+                <div class="stats-row">
+                    <div class="stat">WIN: <span class="c-green">5000</span></div>
+                    <div class="stat">LOSE: <span class="c-red">200</span></div>
+                </div>
+            </div>
+            
+            <h3>ТВОЙ ИНВЕНТАРЬ</h3>
+            <div class="inventory-grid" id="inventory">
+                <div class="inv-item">🎁 Basic Rocket</div>
+            </div>
+
+            <div class="wallet-actions">
+                <button class="btn btn-acid" onclick="depositStars()">ПОПОЛНИТЬ (Stars)</button>
+                <button class="btn btn-pink" onclick="contactManager()">ПОПОЛНИТЬ (NFT/TON)</button>
+                <button class="btn btn-cyan" onclick="contactManager()">ВЫВОД СРЕДСТВ</button>
+            </div>
+
+            <button id="admin-btn" class="hidden-btn" onclick="openAdmin()">ADMIN</button>
+        </main>
+
+        <nav class="bottom-nav">
+            <button onclick="openPage('rocket')" class="nav-btn active-nav">🚀</button>
+            <button onclick="openPage('mines')" class="nav-btn">💣</button>
+            <button onclick="openPage('upgrade')" class="nav-btn">🎡</button>
+            <button onclick="openPage('profile')" class="nav-btn">👤</button>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
